@@ -1,5 +1,5 @@
 export RELEASE="2.2.11"
 export TYPE="release"
 export BUILD_OPTIONS="-r ${RELEASE}-${TYPE}"
-export TAGS="leodido/sphinxsearch:${RELEASE} leodido/sphinxsearch:latest"
+export TAGS="harbor.service.venuemanager.net/tools/sphinxsearch:${RELEASE}-2 harbor.service.venuemanager.net/tools/sphinxsearch:latest"
 export PUSH_IMAGE="false"
