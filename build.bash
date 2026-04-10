@@ -8,7 +8,7 @@ build() {
 	declare build_files="${*:-$OPTIONS}"
 	: "${build_files:?}"
 
-	docker build -t "$BUILD_IMAGE" builder
+	#docker build -t "$BUILD_IMAGE" builder
 
 	for file in ${build_files}; do
 		( source "${file}"
@@ -20,9 +20,9 @@ build() {
 
 		: "${build:?}" "${tags:?}" "${build_options:?}" "${release:?}"
 
-		docker rm "$build" 2>/dev/null || true
+		#docker rm "$build" 2>/dev/null || true
 
-		docker run --rm "$BUILD_IMAGE" ${build_options} > "./${version_dir}/sphinxsearch.tar.gz" || true
+		#docker run --rm "$BUILD_IMAGE" ${build_options} > "./${version_dir}/sphinxsearch.tar.gz" || true
 
         for tag in ${tags}; do
             docker build -t "${tag}" "${version_dir}"
