@@ -90,6 +90,7 @@ main() {
   while getopts ":r:" opt; do
       case ${opt} in
           r) VERSION="$OPTARG";;
+          s) /bin/bash ;;
           *) usage;;
       esac
   done
