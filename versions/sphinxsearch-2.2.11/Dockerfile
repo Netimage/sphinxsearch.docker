@@ -12,7 +12,7 @@ RUN apt-get update && apt-get install -y unixodbc-dev libexpat-dev python3-pip p
 ADD /sphinxsearch.tar.gz /usr/local/
 ADD dicts /var/diz/sphinx
 
-RUN groupadd -g 1000 sphinx && useradd -u 1000 -g 1000 -M -d /rotator -s /usr/sbin/nologin sphinx
+RUN groupadd -g 1000 sphinx && useradd -u 1000 -g 1000 --no-create-home --home-dir /rotator --shell /usr/sbin/nologin sphinx
 
 # Directory to place sphinx.conf in. ###DB_*### variables will be replaced by setup_and_run.sh before use.
 RUN mkdir -p /app/frontend/var /var/idx/sphinx /var/log/sphinx /var/lib/sphinx /var/run/sphinx \
